@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring
+    implementation (group: 'org.apache.shiro', name: 'shiro-spring', version: '1.9.0')
+//            {
+//            exclude group: "org.apache.shiro", module: "shiro-core"
+//            exclude group: "org.apache.shiro", module: "shiro-web"
+//        }
+
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+//    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    // https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
+//    implementation group: 'org.apache.shiro', name: 'shiro-core', version: '1.11.0'
+// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+//    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '10.0.27'
+
+    // https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
+//    implementation group: 'org.apache.shiro', name: 'shiro-web', version: '1.11.0'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
